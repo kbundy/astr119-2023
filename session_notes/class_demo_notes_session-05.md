@@ -28,16 +28,23 @@ Show that the docstring updates after we save the file, `function1.py`
 
 
 ## if / else
-- Add an if/else statement to `testFunctionCall.py`
+Add an if/else statement to `testFunctionCall.py`  
+Example  
 
 	aa = 2
 	if aa > 3:
 		print('it is really awesome')
+
 	else:
 		print('not awesome enough')
 
 
 ## Optional "Run like a script"
+
+`__name__` is a special variable that gives the name of an imported module
+
+	import function1
+	print(function1.__name__)
 
 	if __name__ == '__main__':
 		aa = awesomeness(5)
