@@ -65,5 +65,10 @@ The brackets mean a "list" we'll talk about thie more later
 	for item in [0,1,'hello',3]:
 		print(item*2)
 
+----
+## Passing command-line arguments
 
+	import sys
+	a = float(sys.argv[1])
+	b = float(sys.argv[2])
 
