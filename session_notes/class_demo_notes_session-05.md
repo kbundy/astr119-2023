@@ -8,6 +8,9 @@
 	c.InteractiveShellApp.extensions = ['autoreload']     
 	c.InteractiveShellApp.exec_lines = ['%autoreload 2']
 
+- Ideally, we do this from the command line
+- Otherwise, we have to know that on a Mac, to see hidden files in an open-file dialog, we need `shift`+`command`+`dot`
+
 ## Functions
 ### Docstrings
 - Add a dosctring to `function1.py`
