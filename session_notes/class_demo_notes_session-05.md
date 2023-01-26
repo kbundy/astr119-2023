@@ -59,16 +59,43 @@ Example
 
 ----
 ## Loops 
-	for i in [0,1,2,3]:
-		print(i)
+	for item in [0,1,2,3]:
+		print(item)
 
-	for i in [0,1,2,3]:
-		print(i*2)
+	for item in [0,1,2,3]:
+		print(item*2)
 
-The brackets mean a "list" we'll talk about thie more later  
+The brackets mean a "list" we'll talk about this more later  
 
 	for item in [0,1,'hello',3]:
 		print(item*2)
+
+Indexed for-loop, we will use the built-in function `range()`
+Most simply, `range(5)` will return an index that goes from 0 to 4, and increments by 1  
+More generally, `range(start, stop-1, step=1)`
+
+	for i in range(5):
+		print(i)
+		
+	for i in range(2,6):
+		print(i)
+		
+	for i in range(2,6,2):
+		print(i)
+		
+	for i in range(2,6,0.5):
+		print(i)
+
+Last one fails, because the step size must be an integer
+
+Example of a sum:
+
+	# Sum of all numbers from n=1-100
+	N = 100
+	for n in range(1,N+1):
+		runningSum = runningSum + n
+
+
 
 ----
 
