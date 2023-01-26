@@ -39,7 +39,7 @@ Example
 		print('not awesome enough')
 
 
-## Optional "Run like a script"
+## Optional "Run like a script or utility"
 
 `__name__` is a special variable that gives the name of an imported module
 
@@ -51,6 +51,11 @@ Example
 		bb = awesomeness(aa)
 		print(f'My function gives the answer: {bb:0.2}')
 
+## Passing command-line arguments
+
+	import sys
+	a = float(sys.argv[1])
+	b = float(sys.argv[2])
 
 ----
 ## Loops 
@@ -66,9 +71,4 @@ The brackets mean a "list" we'll talk about thie more later
 		print(item*2)
 
 ----
-## Passing command-line arguments
-
-	import sys
-	a = float(sys.argv[1])
-	b = float(sys.argv[2])
 
