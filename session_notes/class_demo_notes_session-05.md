@@ -3,12 +3,19 @@
 
 ## IPYTHON: auto Reload edited files
 
+Run 2 commands every time you start ipython:
+
+	%load_ext autoreload
+	%autoreload 2
+
+Or (better), add to a environmental profile variable
+
 	(base) monolith:~:> ipython profile create
 	Open ~/.ipython/profile_default/ipython_config.py and append
 	c.InteractiveShellApp.extensions = ['autoreload']     
 	c.InteractiveShellApp.exec_lines = ['%autoreload 2']
 
-- Ideally, we do this from the command line
+- Ideally, we find and edit the profile from the command line (it's a hidden file)
 - Otherwise, we have to know that on a Mac, to see hidden files in an open-file dialog, we need `shift`+`command`+`dot`
 
 ## Functions
@@ -70,7 +77,7 @@ The brackets mean a "list" we'll talk about this more later
 	for item in [0,1,'hello',3]:
 		print(item*2)
 
-Indexed for-loop, we will use the built-in function `range()`
+Indexed for-loop, we will use the built-in function `range()`.  The variable then becomes a "loop index".
 Most simply, `range(5)` will return an index that goes from 0 to 4, and increments by 1  
 More generally, `range(start, stop-1, step=1)`
 
@@ -88,7 +95,7 @@ More generally, `range(start, stop-1, step=1)`
 
 Last one fails, because the step size must be an integer
 
-Example of a sum:
+Example of a sum (show that it fails because `runningSum` is not originally defined)
 
 	# Sum of all numbers from n=1-100
 	N = 100
