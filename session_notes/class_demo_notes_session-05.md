@@ -98,11 +98,29 @@ Last one fails, because the step size must be an integer
 Example of a sum (show that it fails because `runningSum` is not originally defined)
 
 	# Sum of all numbers from n=1-100
+	#   We know that the sum should be: Sum = N*(N+1)/2
 	N = 100
 	for n in range(1,N+1):
 		runningSum = runningSum + n
+		
+	print(runningSum)
+	print(N*(N+1)/2)
 
 
 
 ----
+## Integers and Floats
+In ipython:
 
+	x = 2
+	y = 2.0
+	type(x)
+	type(y)
+	
+So, warning, this will fail: 
+
+	N=100
+	for n in range(100/2):
+		print(n)
+	
+And just see what is: `type(100/2)` is `int`
