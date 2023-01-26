@@ -124,3 +124,24 @@ So, warning, this will fail:
 		print(n)
 	
 And just see what is: `type(100/2)` is `int`
+
+Convert between types with `float(2)` and `int(2.0)`.  
+What about `int(2.3)`?  
+What about `int(2.9)`?  
+And also to strings with `str(2.0)`  
+
+## Stop at specified precision: `%` Modulus, `abs`, and Break
+
+### Example of determining whether a number is even or odd.  
+Use if/else  
+
+`%` is the modulus operator (the remainder)
+
+	3%2  # remainder is 1
+	5%2  # remainder is 1
+	6%2  # remainder is 0
+
+### Check and `break`
+Test achieved precision with built-in `abs()`
+If we're done, we can break with special command `break` which breaks out of the loop
+
