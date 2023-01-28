@@ -46,24 +46,6 @@ Example
 		print('not awesome enough')
 
 
-## Optional "Run like a script or utility"
-
-`__name__` is a special variable that gives the name of an imported module
-
-	import function1
-	print(function1.__name__)
-
-	if __name__ == '__main__':
-		aa = awesomeness(5)
-		bb = awesomeness(aa)
-		print(f'My function gives the answer: {bb:0.2}')
-
-## Passing command-line arguments
-
-	import sys
-	a = float(sys.argv[1])
-	b = float(sys.argv[2])
-
 ----
 ## Loops 
 	for item in [0,1,2,3]:
@@ -107,6 +89,26 @@ Example of a sum (show that it fails because `runningSum` is not originally defi
 	print(N*(N+1)/2)
 
 
+----
+# For Next time...
+
+## Optional "Run like a script or utility"
+
+`__name__` is a special variable that gives the name of an imported module
+
+	import function1
+	print(function1.__name__)
+
+	if __name__ == '__main__':
+		aa = awesomeness(5)
+		bb = awesomeness(aa)
+		print(f'My function gives the answer: {bb:0.2}')
+
+## Passing command-line arguments
+
+	import sys
+	a = float(sys.argv[1])
+	b = float(sys.argv[2])
 
 ----
 ## Integers and Floats
@@ -130,7 +132,7 @@ What about `int(2.3)`?
 What about `int(2.9)`?  
 And also to strings with `str(2.0)`  
 
-## Stop at specified precision: `%` Modulus, `abs`, and Break
+## Break loop at specified precision: `%` Modulus, `abs`, and Break
 
 ### Example of determining whether a number is even or odd.  
 Use if/else  
