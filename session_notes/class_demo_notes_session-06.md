@@ -1,50 +1,5 @@
 
-# Demos: Session-05
-
-## IPYTHON: auto Reload edited files
-
-Run 2 commands every time you start ipython:
-
-	%load_ext autoreload
-	%autoreload 2
-
-Or (better), add to a environmental profile variable
-
-	(base) monolith:~:> ipython profile create
-	Open ~/.ipython/profile_default/ipython_config.py and append
-	c.InteractiveShellApp.extensions = ['autoreload']     
-	c.InteractiveShellApp.exec_lines = ['%autoreload 2']
-
-- Ideally, we find and edit the profile from the command line (it's a hidden file)
-- Otherwise, we have to know that on a Mac, to see hidden files in an open-file dialog, we need `shift`+`command`+`dot`
-
-## Functions
-### Docstrings
-- Add a dosctring to `function1.py`
-- Open ipython, `from function1 import awesomeness`
-- `help(awesomeness)` and `awesomeness?` 
-
-Show that the docstring updates after we save the file, `function1.py`
-
-### Multiple parameters
-`def awesomeness(x, a=5):`
-
-- You don't have to supply an input for `a` if you don't want to (defaults to 5)
-- The order matters if we don't label the input variable
-- Order doesn't matter if we provide all labels
-
-
-## if / else
-Add an if/else statement to `testFunctionCall.py`  
-Example  
-
-	aa = 2
-	if aa > 3:
-		print('it is really awesome')
-
-	else:
-		print('not awesome enough')
-
+# Demos: Session-06
 
 ## Optional "Run like a script or utility"
 
