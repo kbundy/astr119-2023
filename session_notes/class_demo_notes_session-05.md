@@ -77,7 +77,12 @@ More generally, `range(start, stop-1, step=1)`
 
 Last one fails, because the step size must be an integer
 
+
+(Instructor's note to self: see .md for further comments)
 <!--
+
+2023-01-26: Barely had time to demo loops.  Loops and the rest below is recopied to Session-06
+
 
 Example of a sum (show that it fails because `runningSum` is not originally defined)
 
@@ -150,6 +155,4 @@ Use if/else
 Test achieved precision with built-in `abs()`
 If we're done, we can break with special command `break` which breaks out of the loop
 
-(Instructor's note to self: see .md for further comments)
 -->
-2023-01-26: Barely had time to demo loops.  Loops and the rest below is recopied to Session-06
