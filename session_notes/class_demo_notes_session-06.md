@@ -93,6 +93,29 @@ The elements in the list can be of mixed type, but don't do this...
 	
 Typically, we don't do this.  Better organizational principle is to keep list elements of the same type.
 
+### Lists and For-Loops
+
+How many elements are in the container?
+
+	len(planets)
+	
+Do something with the elements in the list using a for-loop:
+
+	for k in range(len(planets)):
+		print(f'Planet number {k+1} is {planets[k]}')
+
+Even simpler, in python, you can sometimes leave out the index if you're just looping through the container.
+
+	for thisPlanet in planets:
+		print(f'Right now my for-loop is working on planet, {thisPlanet}')
+		
+### List Comprehension
+
+Kinda unique to python.  
+
+	radiusJupiterUnits = [2, 3, 1.5, 2.2]
+	diameterJupiterUnits = [radius*2 for radius in radiusJupiterUnits]
+
 ----
 ## Integers and Floats
 In ipython:
