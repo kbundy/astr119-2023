@@ -21,16 +21,6 @@
 
 ----
 ## Loops 
-	for item in [0,1,2,3]:
-		print(item)
-
-	for item in [0,1,2,3]:
-		print(item*2)
-
-The brackets mean a "list" we'll talk about this more later  
-
-	for item in [0,1,'hello',3]:
-		print(item*2)
 
 Indexed for-loop, we will use the built-in function `range()`.  The variable then becomes a "loop index".
 Most simply, `range(5)` will return an index that goes from 0 to 4, and increments by 1  
@@ -61,7 +51,32 @@ Example of a sum (show that it fails because `runningSum` is not originally defi
 	print(runningSum)
 	print(N*(N+1)/2)
 
+## Lists
 
+Using ipython.
+
+List of strings
+
+	planet_1 = 'WASP-39b'
+	planet_2 = '51-Peg'
+	planet_3 = 'Jupiter'
+	
+	planets = ['WASP-39b', '51-Peg', 'Jupiter', 'HD249508']
+	
+	type(planets)
+	
+Lists are "sequence containers," which means the order is impoortant and preserved.
+
+We can access contents with an "index"
+
+	print(planets[0])
+	
+Zero-indexed in python means the first element is zero.
+
+	print(f'The first planet in the list is {planet_1}')
+	
+The elements in the list can be of mixed type:
+	
 
 ----
 ## Integers and Floats
