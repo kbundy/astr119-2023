@@ -73,10 +73,25 @@ We can access contents with an "index"
 	
 Zero-indexed in python means the first element is zero.
 
-	print(f'The first planet in the list is {planet_1}')
+	ivariable = 1
+	print(f'The i-th planet in the list is {planets[ivariable]}')
 	
-The elements in the list can be of mixed type:
+	i = 0
+	print(f'The {i}-th planet in the list is {planets[i]}')
 	
+The elements in the list can be of mixed type, but don't do this...
+	
+	planetStuff = [ 3.8e26, 'units: Joules, Watts, Kelvin, meters, kg', planets]
+	
+	# Note different types within this list
+	type(planetStuff[0])
+	type(planetStuff[1])
+	
+	# Indexing lists within lists
+	planetStuff[2]
+	planetStuff[2][1]
+	
+Typically, we don't do this.  Better organizational principle is to keep list elements of the same type.
 
 ----
 ## Integers and Floats
