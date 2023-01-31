@@ -116,6 +116,29 @@ Kinda unique to python.
 	radiusJupiterUnits = [2, 3, 1.5, 2.2]
 	diameterJupiterUnits = [radius*2 for radius in radiusJupiterUnits]
 
+### List Slicing
+
+Basic slicing.  Note that the slice [0:i] does not include [i].  It slices from [0] to [i-1]
+
+	aa = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+	aa[0:4]
+
+And what is the final element?  Two ways:
+
+	aa[7]  # If we know there is a 7th place in the index
+	
+	aa[-1] # Useful when we don't know the number of elements, and want to check the end
+	
+	aa[-3]
+	
+List concatenation and repitition:
+
+	bb = aa + aa
+	
+	aa*2
+	
+
+
 ----
 ## Integers and Floats
 In ipython:
