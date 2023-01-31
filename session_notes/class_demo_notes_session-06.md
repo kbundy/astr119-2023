@@ -160,6 +160,7 @@ Methods are built-in functions that belong to a particular variable.  Type `vari
 	planets.append('mercury')  # Add a new item to the list
 	planets.remove('jupiter')  # Remove an item from the list
 	planets.count('mercury')  # Number of times a list item appears
+	planets.index('jupiter')  # Returns the first list index that matches the supplied value
 	
 The `copy` method.  A new assignment points to a new variable to the same object.
 
