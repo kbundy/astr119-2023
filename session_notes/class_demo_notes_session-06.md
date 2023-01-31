@@ -19,6 +19,12 @@
 	a = float(sys.argv[1])
 	b = float(sys.argv[2])
 
+## Also, note you can access variables from imported modules
+
+If you define a variable with function1.py and then `import function1`, the variable is accessible via
+
+	var = function1.variable
+
 ----
 ## Loops 
 
@@ -51,6 +57,7 @@ Example of a sum (show that it fails because `runningSum` is not originally defi
 	print(runningSum)
 	print(N*(N+1)/2)
 
+----
 ## Lists
 
 Using ipython.
@@ -116,7 +123,7 @@ Kinda unique to python.
 	radiusJupiterUnits = [2, 3, 1.5, 2.2]
 	diameterJupiterUnits = [radius*2 for radius in radiusJupiterUnits]
 
-### List Slicing
+### List Slicing and manipulation
 
 Basic slicing.  Note that the slice [0:i] does not include [i].  It slices from [0] to [i-1]
 
@@ -137,7 +144,11 @@ List concatenation and repitition:
 	
 	aa*2
 	
+Note that it does not multiply the list by x2.  (We need numpy arrays for this)
 
+### List methods
+
+Methods are 
 
 ----
 ## Integers and Floats
