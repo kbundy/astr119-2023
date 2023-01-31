@@ -69,6 +69,7 @@ List of strings
 	planet_3 = 'Jupiter'
 	
 	planets = ['WASP-39b', '51-Peg', 'Jupiter', 'HD249508']
+	planetsAnotherWay = [planet_1, planet_2, planet_3]
 	
 	type(planets)
 	
@@ -138,6 +139,10 @@ And what is the final element?  Two ways:
 	
 	aa[-3]
 	
+You can slice through strings:
+
+	planets[1][2:5]
+	
 List concatenation and repitition:
 
 	bb = aa + aa
@@ -148,7 +153,24 @@ Note that it does not multiply the list by x2.  (We need numpy arrays for this)
 
 ### List methods
 
-Methods are 
+Methods are built-in functions that belong to a particular variable.  Type `variable.` then hit tab to see options.
+
+	planets.sort()  # Sorts the list "in-place"
+	platets.pop()   # Removes the last item
+	planets.append('mercury')  # Add a new item to the list
+	planets.remove('jupiter')  # Remove an item from the list
+	planets.count('mercury')  # Number of times a list item appears
+	
+The `copy` method.  A new assignment points to a new variable to the same object.
+
+	planets2 = planets
+	planets2.pop()  # Removes the last item 
+	planets  # Note that the last item is also removed
+	
+	planets2 = planets.copy()
+	
+Tuples are like lists but with curved (parantheses) brackets.  They are immutable.  They are more efficient (faster) to work with and provide safety.
+	
 
 ----
 ## Integers and Floats
