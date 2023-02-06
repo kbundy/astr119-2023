@@ -69,6 +69,8 @@ Creating a new list by appending vs. list comprehension
 		
 	bb = [(i**2 + 5*i) for i in range(10)]
 	
+This can be very slow for large lists.  Instead, we want to predefine the list/array, and then fill it in.
+	
 **DO LIST EXERCISE**: Find `planet_vitals.py` and `lists_exercises_starter.py` in Slack #class-materials
 
 ----
