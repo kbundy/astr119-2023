@@ -60,7 +60,49 @@ The `copy` method.  A new assignment points to a new variable to the same object
 	planets2 = planets.copy()
 	
 Tuples are like lists but with curved (parantheses) brackets.  They are immutable.  They are more efficient (faster) to work with and provide safety.
+
+Creating a new list by appending vs. list comprehension
+
+	aa = []
+	for i in range(10):
+		aa.append(i**2 + 5*i)
+		
+	bb = [(i**2 + 5*i) for i in range(10)]
 	
+**DO LIST EXERCISE**: Find `planet_vitals.py` and `lists_exercises_starter.py` in Slack #class-materials
+
+----
+## NumPy from SciPy
+https://scipy.org
+
+Numpy: 1) n-dimensional arrays, 2) Functions (broadcasting) on arrays, 3) More math (random numbers, Fourier transforms, linear algebra)
+
+Follow along:
+	import numpy as np  # If necessary conda install numpy
+	
+	# Make an ndarray from a list
+	a = np.array([1,2,3,4])
+	type(a)
+	
+	a.ndim  # This is an "instance" or property (not a function)
+	a.size
+	
+	# 2D array
+	b = np.array([[1,2,3,4], [5,6,7,8]])  # Notice number of square brackets
+	b
+	
+	b.ndim
+	b.size  # Total number of elements
+	b.shape # rows x columns
+	
+	c = np.array([x**2 for x in range(10)])
+	
+Create an array of zeros, then fill it in later.  This is much faster than appending.
+
+	d = np.zeros([2,4])
+	d
+	
+	e = 
 
 ----
 ## Integers and Floats
