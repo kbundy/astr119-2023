@@ -1,5 +1,8 @@
 
-# Demos: Session-06
+# Demos: Session-07
+
+On 2023-02-02, we spent the whole class session working the exoplanet temperature exercise.  Did not do any demos of new python stuff.
+
 
 ## Optional "Run like a script or utility"
 
