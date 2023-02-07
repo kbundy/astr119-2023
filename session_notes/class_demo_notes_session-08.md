@@ -104,7 +104,31 @@ Create an array of zeros, then fill it in later.  This is much faster than appen
 	d = np.zeros([2,4])
 	d
 	
-	e = 
+	e = np.ones([6,2])
+	e
+
+Create an array with arange
+
+	arr = np.arange(10, 100, 10)  # From 10 to 100 in steps of 10
+	
+	arr = np.arange(0.1, 0.9, 0.01)
+	
+Array access and slicing
+
+	arr = np.arange(1,10)
+	arr[2]
+	arr[2] = 40  # Replace values
+	
+	arr[0:4]
+	
+	# With multiple dimensions
+	a = np.array([np.arange(5), np.arange(5)])
+	a.shape
+	
+	a[1,3]  # pick out an element
+	
+	a[1, 2:]  # pick out a slice
+	
 
 ----
 ## Integers and Floats
