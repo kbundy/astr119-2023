@@ -86,7 +86,7 @@ Follow along:
 	a = np.array([1,2,3,4])
 	type(a)
 	
-	a.ndim  # This is an "instance" or property (not a function)
+	a.ndim  # This is an "instance" or attribute (not a function)
 	a.size
 	
 	# 2D array
@@ -156,7 +156,15 @@ Boolean indexing, true/false
 	alow = a < 8
 	a[alow]
 	
+## Numpy saving arrays to file
+
+	np.savetxt('filename.txt', arr)
+	arr = np.loadtxt('filename.txt')
 	
+	# For larger files and compression
+	np.save()
+	np.savez()
+	np.load()
 
 ----
 ## Integers and Floats
