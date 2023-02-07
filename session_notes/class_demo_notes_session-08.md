@@ -129,6 +129,25 @@ Array access and slicing
 	
 	a[1, 2:]  # pick out a slice
 	
+Random numbers and "broadcasting" (element-wise operations)
+
+	a = np.random.random([3,5])
+	
+	b = np.ones([3,5])
+	
+	# broadcasting
+	c = a+b
+	np.sqrt(c)  # Not the same as the math module function
+	
+Functions can operate on arrays.  Sometime they are built-in to array objects.
+
+	np.max(c)  # What is the max value?
+	c.max()    # What is the max value?
+	
+	c.argmax()  # What index (slot) in the array has the maximum value?
+	
+**DO ARRAY EXERCISE**: Rework `lists_exercises_starter.py` to work with numpy arrays instead of lists
+
 
 ----
 ## Integers and Floats
