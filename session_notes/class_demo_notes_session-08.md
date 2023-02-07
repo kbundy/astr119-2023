@@ -146,8 +146,17 @@ Functions can operate on arrays.  Sometime they are built-in to array objects.
 	
 	c.argmax()  # What index (slot) in the array has the maximum value?
 	
+
 **DO ARRAY EXERCISE**: Rework `lists_exercises_starter.py` to work with numpy arrays instead of lists
 
+Boolean indexing, true/false
+
+	a = np.arange(20)
+	a
+	alow = a < 8
+	a[alow]
+	
+	
 
 ----
 ## Integers and Floats
