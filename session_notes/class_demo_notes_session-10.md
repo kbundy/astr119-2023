@@ -44,12 +44,73 @@ Boolean indexing, true/false
 
 Please make sure you have `matplotlib` installed.  Try `conda install matplotlib`
 
+
+
 ## matplotlib in jupyter
+
+Easiest interface to plotting tools: `import matplotlib.pyplot as plt`
 
 From IPython, life is easier if you initiate with `%matplotlib`.  
 In a jupyter notebook, initiate with `%matplotlib inline`
 
+### Basic plot example
 
+	x = np.arange(0, 2*np.pi, 2*np.pi/10)
+	
+	# Start location, stopping location (included), and number of elements
+	x = np.linspace(0, 2*np.pi, 10)
+	
+	y = np.cos(x)
+	z = np.sin(x)
+	
+	plt.plot(x,y)
+	plt.plot(x,z)  # Overplots the on the same figure
+	plt.show()
+	
+Now let's indicate the data points, with different symbols (markers) for each curve
+
+	plt.plot(x, y, marker='+')
+	plt.plot(x, z, marker='o')
+	
+Then increase the number of data points; then we can remove the markers and make more of a smooth curve.
+
+Labeling the axes
+
+	plt.xlabel('angle [rad]')
+	plt.ylabel('value')
+	
+Adding labels to the data
+
+	plt.plot(x, y, marker='+', label='cosine')
+	plt.plot(x, z, marker='o', label='sine')
+	plt.legend()
+	
+### Plot customizations
+
+Linestyle
+
+	plt.plot(x, y, marker='+', label='cosine', linestyle='-')
+	plt.plot(x, y, marker='o', label='sine', linestyle='--')
+	
+Line thickness
+
+	plt.plot(x, y, marker='+', label='cosine', linestyle='-', linewidth=2)
+	plt.plot(x, y, marker='o', label='sine', linestyle='--', linewidth=2)
+
+Change font size
+
+	plt.xlabel('angle [rad]', fontsize=14)
+	plt.ylabel('angle [rad]', fontsize=14)
+	plt.legend(fontsize=15)
+	
+Change limits
+
+	plt.xlim(0, 2*np.pi)  # This should really be a tuple
+	plt.ylim((-1,1))      # Like this...
+	
+Change figure size.  Before anyother functions, we need to specifically define the Figure window by adding a call to `plt.figure`:
+
+	plt.figure(figsize=(8,6))
 
 ----
 ## Integers and Floats
