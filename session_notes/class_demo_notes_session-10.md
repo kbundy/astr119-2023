@@ -20,6 +20,35 @@ Boolean indexing, true/false
 	np.savez()
 	np.load()
 
+____
+
+# IPython and jupyter notebooks
+
+From the command line: `jupyter notebook`.  
+To install jupyter: `conda install -c anaconda jupyter`
+
+A new way to develop a kind of scientific logbook, with embedded scripted code.  
+But beware, it is easy 
+
+1. Show code within cells, execute one at a time..
+2. Multiple cells, execute all
+
+To auto-update based on file changes:
+
+	%load_ext autoreload
+	%autoreload 2
+
+# Plotting
+
+Please make sure you have `matplotlib` installed.  Try `conda install matplotlib`
+
+## matplotlib in jupyter
+
+From IPython, life is easier if you initiate with `%matplotlib`.  
+In a jupyter notebook, initiate with `%matplotlib inline`
+
+
+
 ----
 ## Integers and Floats
 In ipython:
