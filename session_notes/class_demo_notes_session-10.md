@@ -27,8 +27,9 @@ ____
 From the command line: `jupyter notebook`.  
 To install jupyter: `conda install -c anaconda jupyter`
 
-A new way to develop a kind of scientific logbook, with embedded scripted code.  
-But beware, it is easy 
+A new way to develop a kind of scientific logbook, with embedded scripted code.  Works within a web browser, so it's easy to make portable and share.
+
+But beware, it is good for development, but problematic for production.  Easy to get lost on when/where variables are defined.  Easy to lose saved changes.  Easy to make things that cannot be reproduced later.  So, this of `jupyter` like `iPython`, a useful tool to use with your standard coding setup, especially when you want to add comments/notes to code and figures.
 
 1. Show code within cells, execute one at a time..
 2. Multiple cells, execute all
