@@ -37,6 +37,28 @@ Session 2023-02-28
 	#  More bins and zooming in further
 	plt.clf()
 	exodf['A'][exodf['A'] < 2].plot(kind='hist', bins=20)  # Now we see something interesting
+	
+	# describe() provides a statistical summary of a data series
+	exodf['A'].describe()
+	
+An easy way to search through column names: `exodf.filter(regex='MSIN')`
+
+### Multi-conditional indexes
+
+	indx = exodf['A'] < 0.5
+	indx       # Series of True, False
+	len(indx)  # This is a Series with length equal to the length of the dataframe
+
+	exodf[indx] # Just the ones with True
+	len(exodf[indx]) 
+	indx.sum()  # Fast way to count the number of True values
+	
+	# Combine multiple conditions
+	indx2 = (exodf['A'] < 0.5) & (exodf['MSINI'] < 1)
+	indx2.sum()
+	exoCloseSmalldf = exodf[indx2]
+
+
 
 ----
 ## Integers and Floats
