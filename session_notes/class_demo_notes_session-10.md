@@ -1,81 +1,26 @@
 
-# Demos: Session-09
-Session 2023-02-09
+# Demos: Session-10
+Session 2023-02-14
+____
 
-## NumPy from SciPy
-https://scipy.org
+# `jupyter` notebooks
 
-Numpy: 1) n-dimensional arrays, 2) Functions (broadcasting) on arrays, 3) More math (random numbers, Fourier transforms, linear algebra)
+From the command line: `jupyter notebook`.  
+To install jupyter: `conda install -c anaconda jupyter`
 
-Follow along:
-	import numpy as np  # If necessary conda install numpy
-	
-	# Make an ndarray from a list
-	a = np.array([1,2,3,4])
-	type(a)
-	
-	a.ndim  # This is an "instance" or attribute (not a function)
-	a.size
-	
-	# 2D array
-	b = np.array([[1,2,3,4], [5,6,7,8]])  # Notice number of square brackets
-	b
-	
-	b.ndim
-	b.size  # Total number of elements
-	b.shape # rows x columns
-	
-	c = np.array([x**2 for x in range(10)])
-	
-Create an array of zeros, then fill it in later.  This is much faster than appending.
+A new way to develop a kind of scientific logbook, with embedded scripted code.  Works within a web browser, so it's easy to make portable and share.
 
-	d = np.zeros([2,4])
-	d
-	
-	e = np.ones([6,2])
-	e
+But beware, it is good for development, but problematic for production.  Easy to get lost on when/where variables are defined.  Easy to lose saved changes.  Easy to make things that cannot be reproduced later.  So, this of `jupyter` like `iPython`, a useful tool to use with your standard coding setup, especially when you want to add comments/notes to code and figures.
 
-Create an array with arange
+1. Show code within cells, `shift-enter` execute one cell at a time..
+2. Multiple cells, execute all
 
-	arr = np.arange(10, 100, 10)  # From 10 to 100 in steps of 10
-	
-	arr = np.arange(0.1, 0.9, 0.01)
-	
-Array access and slicing
+To auto-update based on file changes:
 
-	arr = np.arange(1,10)
-	arr[2]
-	arr[2] = 40  # Replace values
-	
-	arr[0:4]
-	
-	# With multiple dimensions
-	a = np.array([np.arange(5), np.arange(5)])
-	a.shape
-	
-	a[1,3]  # pick out an element
-	
-	a[1, 2:]  # pick out a slice
-	
-Random numbers and "broadcasting" (element-wise operations)
+	%load_ext autoreload
+	%autoreload 2
 
-	a = np.random.random([3,5])
-	
-	b = np.ones([3,5])
-	
-	# broadcasting
-	c = a+b
-	np.sqrt(c)  # Not the same as the math module function
-	
-Functions can operate on arrays.  Sometime they are built-in to array objects.
-
-	np.max(c)  # What is the max value?
-	c.max()    # What is the max value?
-	
-	c.argmax()  # What index (slot) in the array has the maximum value?
-	
-
-**DO ARRAY EXERCISE**: Rework `lists_exercises_starter.py` to work with numpy arrays instead of lists
+# Two more things on numpy
 
 Boolean indexing, true/false
 
@@ -93,6 +38,79 @@ Boolean indexing, true/false
 	np.save()
 	np.savez()
 	np.load()
+
+----
+# Plotting
+
+Please make sure you have `matplotlib` installed.  Try `conda install matplotlib`
+
+
+
+## matplotlib in jupyter
+
+Easiest interface to plotting tools: `import matplotlib.pyplot as plt`
+
+From IPython, life is easier if you initiate with `%matplotlib`.  
+In a jupyter notebook, initiate with `%matplotlib inline`
+
+### Basic plot example
+
+	x = np.arange(0, 2*np.pi, 2*np.pi/10)
+	
+	# Start location, stopping location (included), and number of elements
+	x = np.linspace(0, 2*np.pi, 10)
+	
+	y = np.cos(x)
+	z = np.sin(x)
+	
+	plt.plot(x,y)
+	plt.plot(x,z)  # Overplots the on the same figure
+	plt.show()
+	
+Now let's indicate the data points, with different symbols (markers) for each curve
+
+	plt.plot(x, y, marker='+')
+	plt.plot(x, z, marker='o')
+	
+Then increase the number of data points; then we can remove the markers and make more of a smooth curve.
+
+Labeling the axes
+
+	plt.xlabel('angle [rad]')
+	plt.ylabel('value')
+	
+Adding labels to the data
+
+	plt.plot(x, y, marker='+', label='cosine')
+	plt.plot(x, z, marker='o', label='sine')
+	plt.legend()
+	
+### Plot customizations
+
+Linestyle
+
+	plt.plot(x, y, marker='+', label='cosine', linestyle='-')
+	plt.plot(x, y, marker='o', label='sine', linestyle='--')
+	
+Line thickness
+
+	plt.plot(x, y, marker='+', label='cosine', linestyle='-', linewidth=2)
+	plt.plot(x, y, marker='o', label='sine', linestyle='--', linewidth=2)
+
+Change font size
+
+	plt.xlabel('angle [rad]', fontsize=14)
+	plt.ylabel('angle [rad]', fontsize=14)
+	plt.legend(fontsize=15)
+	
+Change limits
+
+	plt.xlim(0, 2*np.pi)  # This should really be a tuple
+	plt.ylim((-1,1))      # Like this...
+	
+Change figure size.  Before anyother functions, we need to specifically define the Figure window by adding a call to `plt.figure`:
+
+	plt.figure(figsize=(8,6))
 
 ----
 ## Integers and Floats
