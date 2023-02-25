@@ -1,98 +1,42 @@
 
-# Demos: Session-09
-Session 2023-02-09
+# Demos: Session-14
+Session 2023-02-28
 
-## NumPy from SciPy
-https://scipy.org
+## Review of data handling and `pandas`
 
-Numpy: 1) n-dimensional arrays, 2) Functions (broadcasting) on arrays, 3) More math (random numbers, Fourier transforms, linear algebra)
+### Interrogating data tables with pandas in ipython...
 
-Follow along:
-	import numpy as np  # If necessary conda install numpy
+	import numpy as np
+	import pandas as pd
+	import import matplotlib.pyplot as plt
+	% matplotlib
 	
-	# Make an ndarray from a list
-	a = np.array([1,2,3,4])
-	type(a)
+	# Load in exoplanets.csv.
+	exodf = pd.read_csv('exoplanets.csv')
 	
-	a.ndim  # This is an "instance" or attribute (not a function)
-	a.size
+	# Plot histogram of semi-major axis
+	plt.figure()
+	exodf['A'].plot(kind='hist')  # Not very useful, range is too big
 	
-	# 2D array
-	b = np.array([[1,2,3,4], [5,6,7,8]])  # Notice number of square brackets
-	b
+	# Plot the series of points
+	plt.clf()  # Clear the figure
+	exodf['A'].plot(marker='.')  # Darn, we have connecting lines
 	
-	b.ndim
-	b.size  # Total number of elements
-	b.shape # rows x columns
+	plt.clf()
+	exodf['A'].plot(marker='.', lw=0) # Remove the connecting lines
+	# This plot shows where the measurements are in broad terms
 	
-	c = np.array([x**2 for x in range(10)])
+	# Now plot a more revealing historgram by restricting the range
+	plt.clf()
+	exodf['A'][exodf['A'] < 10].plot(kind='hist')
 	
-Create an array of zeros, then fill it in later.  This is much faster than appending.
-
-	d = np.zeros([2,4])
-	d
+	#  Hmm.. zoom in by restricting the range further
+	plt.clf()
+	exodf['A'][exodf['A'] < 4].plot(kind='hist')
 	
-	e = np.ones([6,2])
-	e
-
-Create an array with arange
-
-	arr = np.arange(10, 100, 10)  # From 10 to 100 in steps of 10
-	
-	arr = np.arange(0.1, 0.9, 0.01)
-	
-Array access and slicing
-
-	arr = np.arange(1,10)
-	arr[2]
-	arr[2] = 40  # Replace values
-	
-	arr[0:4]
-	
-	# With multiple dimensions
-	a = np.array([np.arange(5), np.arange(5)])
-	a.shape
-	
-	a[1,3]  # pick out an element
-	
-	a[1, 2:]  # pick out a slice
-	
-Random numbers and "broadcasting" (element-wise operations)
-
-	a = np.random.random([3,5])
-	
-	b = np.ones([3,5])
-	
-	# broadcasting
-	c = a+b
-	np.sqrt(c)  # Not the same as the math module function
-	
-Functions can operate on arrays.  Sometime they are built-in to array objects.
-
-	np.max(c)  # What is the max value?
-	c.max()    # What is the max value?
-	
-	c.argmax()  # What index (slot) in the array has the maximum value?
-	
-
-**DO ARRAY EXERCISE**: Rework `lists_exercises_starter.py` to work with numpy arrays instead of lists
-
-Boolean indexing, true/false
-
-	a = np.arange(20)
-	a
-	alow = a < 8
-	a[alow]
-	
-## Numpy saving arrays to file
-
-	np.savetxt('filename.txt', arr)
-	arr = np.loadtxt('filename.txt')
-	
-	# For larger files and compression
-	np.save()
-	np.savez()
-	np.load()
+	#  More bins and zooming in further
+	plt.clf()
+	exodf['A'][exodf['A'] < 2].plot(kind='hist', bins=20)  # Now we see something interesting
 
 ----
 ## Integers and Floats
