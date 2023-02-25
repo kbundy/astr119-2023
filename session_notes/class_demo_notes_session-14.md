@@ -59,6 +59,8 @@ Session 2023-02-28
 	indx2.sum()
 	exoCloseSmalldf = exodf[indx2]
 
+	# Combination with bitwise OR. (less commonly useful)
+	indx3 = (exodf['A'] < 0.5) | (exodf['MSINI'] < 1)
 
 ----
 ## Integers and Floats
