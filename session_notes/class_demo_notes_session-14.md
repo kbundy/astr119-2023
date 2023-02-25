@@ -41,7 +41,8 @@ Session 2023-02-28
 	# describe() provides a statistical summary of a data series
 	exodf['A'].describe()
 	
-An easy way to search through column names: `exodf.filter(regex='MSIN')`
+### An easy way to search through column names
+`exodf.filter(regex='MSIN')`
 
 ### Multi-conditional indexes
 
@@ -57,7 +58,6 @@ An easy way to search through column names: `exodf.filter(regex='MSIN')`
 	indx2 = (exodf['A'] < 0.5) & (exodf['MSINI'] < 1)
 	indx2.sum()
 	exoCloseSmalldf = exodf[indx2]
-
 
 
 ----
